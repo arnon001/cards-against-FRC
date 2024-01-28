@@ -119,7 +119,7 @@ export class User implements ITickable {
 						return;
 					}
 
-					console.log("[Game] User " + this.uuid + " created a game named " + gameName);
+					console.log("[Game] User " + this.uuid + " created a game named " + gameName + " password " + gamePassword);
 					this._server.createGame(this, gameName, gamePassword);
 
 					break;
