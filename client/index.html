@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Cards Against FRC</title>
+
+	<link rel="stylesheet" href="/css/toastr.min.css">
+	<link rel="stylesheet" href="/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/css/jquery-confirm.css">
+	<link rel="stylesheet" href="/css/game.css">
+
+	<script src="/js/jquery-confirm.js"></script>
+
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="/js/jquery-3.6.0.min.js"></script>
+	<script src="/js/jquery-confirm.js"></script>
+	<script src="/js/toastr.min.js"></script>
+	<script src="/js/popper.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/misc.js"></script>
+	<script src="/js/message_handler.js"></script>
+	<script src="/js/ui.js"></script>
+	<script src="/js/mobile_check.js"></script>
+	<script src="/js/game.frontend.js"></script>
+	<script src="/js/themes.js"></script>
+	<script src="/js/theme-manager.js"></script>
+</head>
+
+<body>
+	<!-- Navbar -->
+	<nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="#">Cards Against FRC</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+				aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link select-theme-button" href="#">Theme</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<!-- Templates -->
+	<div class="d-none">
+		<table>
+			<!-- game_tr_template -->
+			<tbody>
+				<tr id="game_tr_template" data-game-id="00000000-0000-0000-0000-000000000000">
+					<td class="td-game-name">
+						<span class="game-name-content">NAME</span>
+						<span class="badge bg-danger password-protected">Password protected</span>
+					</td>
+					<td class="td-game-expansions">[EXPANSIONS]</td>
+					<td class="td-game-player-count">0 / 0 Players</td>
+					<td class="td-game-custom-settings"></td>
+					<td>
+						<button type="button" class="btn btn-primary float-end join-game-button">Join game</button>
+					</td>
+				</tr>
+			</tbody>
+
+			<!-- lobby_player_template -->
+			<tbody>
+				<tr id="lobby_player_template" data-player-id="00000000-0000-0000-0000-000000000000">
+					<td class="td-player-name">h</td>
+				</tr>
+			</tbody>
+
+			<!-- ingame_player_template -->
+			<tbody>
+				<tr id="ingame_player_template" data-player-id="00000000-0000-0000-0000-000000000000">
+					<td class="td-player-name">
+						<span class="player-name">h</span>
+						<span class="card-czar badge bg-success">Card Czar</span>
+						<span class="selecting-cards badge bg-info">Selecting</span>
+					</td>
+					<td class="td-player-score">0</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<div class="form-check" id="expanstion_template">
+			<input class="form-check-input" type="checkbox" id="expanstion_template_checkbox">
+			<label class="form-check-label" for="expanstion_template_checkbox">
+				Example
+			</label>
+		</div>
+
+		<div id="deck_collection_template">
+			<hr>
+			<h4 class="collection-name">Collection name</h4>
+			<small>
+				<p class="collection-description">[DESCRIPTION]</p>
+			</small>
+		</div>
+
+		<div id="white_card_template" class="col-sm-12 col-md-2 mt-1 mb-1">
+			<div class="card">
+				<div class="card-body">
+
+					<p class="card-text">
+						<span class="badge bg-primary selected-card-number">0</span>
+						<span class="card-text-content">[TEXT]</span>
+					</p>
+				</div>
+				<div class="card-footer text-muted white-card-footer">
+					<span class="expansion-name">Expansion name</span>
+				</div>
+			</div>
+		</div>
+		<div class="card" id="result_white_card_template">
+			<div class="card-body">
+				<p class="card-text">
+					<span class="badge bg-primary selected-card-number">0</span>
+					<span class="card-text-content">[TEXT]</span>
+				</p>
+			</div>
+			<div class="card-footer text-muted white-card-footer">
+				<span class="expansion-name">Expansion name</span>
+			</div>
+		</div>
+	</div>
+
+	<!-- Game -->
+	<div id="game">
+		<!-- Lobby -->
+		<div class="container-fluid mt-2" id="waiting_lobby">
+			<div class="row">
+				<div class="col-4">
+					<span id="lobby_text_waiting_for_host">Waiting for host to start</span>
+					<button type="button" class="btn btn-danger btn_leaveGame float-end">Leave game</button>
+				</div>
+				<div class="col"></div>
+			</div>
+
+			<div class="row mt-2" id="host_options">
+				<div class="col">
+					<button type="button" class="btn btn-primary" id="btn_select_expansions">Select expansions</button>
+					<button type="button" class="btn btn-primary" id="btn_custom_settings">Custom settings</button>
+					<button type="button" class="btn btn-primary" id="btn_start_game">Start game</button>
+				</div>
+			</div>
+
+			<div class="row mt-2">
+				<div class="col-4">
+					<h3>Players</h3>
+					<table class="table table-striped table-hover">
+						<thead>
+							<tr>
+								<th>Name</th>
+							</tr>
+						</thead>
+
+						<tbody id="players_tbody"></tbody>
+					</table>
+				</div>
+				<div class="col">
+					<h3>Expansions</h3>
+					<div id="game_expansions"></div>
+					<h3>Custom settings</h3>
+					<div id="game_custom_settings"></div>
+				</div>
+			</div>
+		</div>
+
+		<!-- In game -->
+		<div class="container-fluid" id="in_game">
+			<div class="row">
+				<div class="col-3">
+					<div>
+						Time left:
+						<span id="time_left"></span>
+						<button type="button" class="btn btn-danger btn_leaveGame float-end mt-2">Leave game</button>
+					</div>
+					<h6>Players</h6>
+					<table class="table table-striped table-hover">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Score</th>
+							</tr>
+						</thead>
+
+						<tbody id="game_players_tbody"></tbody>
+					</table>
+				</div>
+				<div class="col">
+					<div class="container-fluid">
+						<div class="row mt-2">
+							<div class="col" style="max-width: 18rem !important">
+								<div class="card text-white bg-dark px-2" style="width: 18rem;" id="black_card">
+									<div class="card-header" id="black_card_pick">pick 0</div>
+									<h5 class="card-title" id="black_card_text">H</h5>
+
+									<div class="card-body"></div>
+
+									<div class="card-footer text-muted" id="black_card_footer">
+										<span id="black_card_expansion_name">Expansion name</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col mt-2">
+								<div id="voting_cards"></div>
+							</div>
+						</div>
+						<div class="row" id="card_czar_options">
+							<div class="col mt-2">
+								<button type="button" class="btn btn-info" id="btn_card_czar_confirm">Confirm
+									selection</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col">
+					<h6>Hand</h6>
+					<button type="button" class="btn btn-info mb-2" id="btn_confirm_selection">Confirm
+						selection</button>
+
+					<button type="button" class="btn btn-danger mb-2" id="btn_throwaway_mode">Throw away card</button>
+
+					<span id="round_winner_text"></span>
+					<div id="hand_message">
+						<h1 id="you_are_card_czar" class="player-message">You are the Card Czar</h1>
+						<h1 id="wait_for_other_players" class="player-message">Waiting for other players</h1>
+						<h1 id="wait_for_card_czar" class="player-message">Wait for the Card Czar to pick the winner
+						</h1>
+					</div>
+					<div class="card-group row" id="player_hand"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Main menu -->
+	<div id="game_browser">
+		<div class="container">
+			<div class="row">
+				<div class="col-6">
+					<h3>Set name</h3>
+					<div class="row g-3 align-items-center">
+						<div class="col-auto">
+							<input type="text" class="form-control" placeholder="Username" id="tbx_userName">
+						</div>
+						<div class="col-auto">
+							<button id="btn_setUsername" class="btn btn-primary">Set username</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-6">
+					<h3>Create game</h3>
+
+
+					<div class="row g-3 align-items-center">
+						<div class="col-auto">
+							<input type="text" class="form-control" placeholder="Game name" id="tbx_createGameName">
+						</div>
+						<div class="col-auto">
+							<input type="text" class="form-control" placeholder="Password" id="tbx_gamePassword">
+						</div>
+						<div class="col-auto">
+							<button id="btn_createGame" class="btn btn-primary">Create game</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row mt-4">
+				<div class="col">
+					<h3>Join game</h3>
+					<table class="table table-striped table-hover">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Expansions</th>
+								<th>Players</th>
+								<th>Custom settings</th>
+								<th></th>
+							</tr>
+						</thead>
+
+						<tbody id="game_table_rows"></tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<!-- Modals -->
+	<div class="modal fade" id="selectThemeModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+		aria-labelledby="selectThemeModalTitle" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="selectThemeModalTitle">Select theme</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<select class="form-select" id="theme-selector">
+					</select>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="selectExpansionsModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+		aria-labelledby="selectExpansionsModalTitle" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="selectExpansionsModalTitle">Select expansions</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<div id="expansions"></div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+					<button type="button" class="btn btn-primary" id="btn_save_expansions">Save</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="gameSettingsModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+		aria-labelledby="gameSettingsModalTitle" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="gameSettingsModalTitle">Game settings</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<div class="container-inline">
+						<div class="row">
+							<div class="col">
+								<label for="tbx_handSize" class="form-label">Hand size</label>
+								<input type="number" class="form-control" id="tbx_handSize">
+							</div>
+							<div class="col">
+								<label for="tbx_timeLimit" class="form-label">Max round time</label>
+								<input type="number" class="form-control" id="tbx_timeLimit">
+							</div>
+							<div class="col">
+								<label for="tbx_winScore" class="form-label">Win score</label>
+								<input type="number" class="form-control" id="tbx_winScore">
+							</div>
+						</div>
+						<div class="row mt-2">
+							<div>
+								<div class="form-check">
+									<input class="form-check-input" type="checkbox" value="" id="cbx_throwawayCards">
+									<label class="form-check-label" for="cbx_throwawayCards">
+										Allow throwing away cards
+									</label>
+								</div>
+							</div>
+						</div>
+						<div class="row mt-2">
+							<div>
+								<div class="form-check">
+									<input class="form-check-input" type="checkbox" value="" id="cbx_showExpansionName">
+									<label class="form-check-label" for="cbx_showExpansionName">
+										Show expansion name
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+					<button type="button" class="btn btn-danger" id="btn_reset_game_settings">Reset</button>
+					<button type="button" class="btn btn-primary" id="btn_save_game_settings">Save</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- Disconnect message -->
+	<div id="disconnected_message_full" class="d-none">
+		<div id="disconnected_error">
+			<h1>Disconnected</h1>
+			<h2>Please reload the page</h2>
+		</div>
+	</div>
+</body>
+
+</html>

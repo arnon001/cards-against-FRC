@@ -1,0 +1,56 @@
+.my-player {
+	background-color: #145e14;
+}
+
+#black_card {
+	background-color: #000000 !important;
+	border: 1px solid #FFFFFF;
+}
+
+#black_card .card-header {
+	background-color: #000000 !important;
+}
+
+#black_card .card-footer {
+	background-color: #000000 !important;
+}
+
+.throwaway-card-mode .card {
+	background-color: #301e1e;
+}
+
+.throwaway-card-mode .card:hover {
+	background-color: #ff1818 !important;
+}
+
+.throwaway-card-mode .card .card-footer {
+	background-color: #301e1e;
+}
+
+.throwaway-card-mode .card:hover .card-footer {
+	background-color: #ff1818 !important;
+}
+
+.selected-white-card .card {
+	background-color: #166916 !important;
+}
+
+.selected-white-card .card:hover {
+	background-color: #00b300 !important;
+}
+
+.selected-white-card .card .card-footer {
+	background-color: #166916 !important;
+}
+
+.selected-white-card .card .card-footer:hover {
+	background-color: #00b300 !important;
+}
+
+.player-hand-card .card:hover {
+	background-color: #4e4e4e;
+}
+
+.player-hand-card .card .card-footer:hover {
+	background-color: #4e4e4e;
+}

@@ -1,0 +1,25 @@
+{
+  "name": "typescript-against-humanity",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/app.js",
+  "dependencies": {
+    "@types/express": "^4.17.17",
+    "@types/node": "^20.2.3",
+    "chalk": "^5.2.0",
+    "console-stamp": "^3.1.1",
+    "express": "^4.18.2",
+    "nodemon": "^2.0.22",
+    "socket.io": "^4.6.1",
+    "typescript": "^5.0.4",
+    "uuid": "^9.0.0",
+    "uuidv4": "^6.2.13"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node ./dist/app.js",
+    "test": "nodemon --ignore ./client/ ./dist/app.js"
+  },
+  "author": "Zeeraa",
+  "license": "ISC"
+}

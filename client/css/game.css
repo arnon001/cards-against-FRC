@@ -1,0 +1,117 @@
+body {
+	background-attachment: fixed;
+}
+
+#black_card {
+	max-width: 18rem;
+	min-height: 200px;
+	display: inline-flex !important;
+}
+
+.player-hand-card {
+	min-width: 200px;
+	max-width: 18rem;
+	min-height: 150px;
+}
+
+.player-hand-card .card:hover {
+	background-color: #EEEEEE;
+}
+
+.selected-white-card .card {
+	background-color: #BBFFBB;
+}
+
+.selected-white-card .card:hover {
+	background-color: #99FF99 !important;
+}
+
+.disabled-content {
+	pointer-events: none;
+	opacity: 0.4;
+}
+
+#hand_message {
+	position: fixed;
+	z-index: 100;
+	pointer-events: none;
+	text-align: center;
+}
+
+#disconnected_message_full {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 1000;
+}
+
+#disconnected_error {
+	text-align: center;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	z-index: 1001;
+	color: #FF0000;
+}
+
+#disconnected_error h1 {
+	font-size: 500% !important;
+}
+
+.hide-until-loaded {
+	display: none !important;
+}
+
+.my-player {
+	background-color: #AAFFAA;
+}
+
+.played-card-set {
+	display: inline-flex;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	padding-left: 2px;
+	padding-right: 2px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	border: 2px solid #000000;
+}
+
+.card-czar-can-select:hover {
+	border: 2px solid #0000FF;
+}
+
+.card-czar-selected {
+	border: 2px solid #00FF00 !important;
+}
+
+.played-white-card {
+	min-width: 100px;
+	max-width: 18rem;
+	min-height: 150px;
+}
+
+#round_winner_text {
+	font-size: 2rem;
+	font-weight: 500;
+	line-height: 1.2;
+}
+
+#lobby_text_waiting_for_host {
+	font-size: 2rem;
+	font-weight: 500;
+	line-height: 1.2;
+}
+
+.throwaway-card-mode .card {
+	background-color: #FFCCCC;
+}
+
+.throwaway-card-mode .card:hover {
+	background-color: #FFAAAA !important;
+}

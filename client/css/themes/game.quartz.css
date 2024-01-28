@@ -1,0 +1,35 @@
+body {
+	background-repeat: no-repeat !important;
+	background-size: auto !important;
+	height: 100vh !important;
+	padding: 0 !important;
+}
+
+.my-player {
+	background-color: #002c5f;
+}
+
+#black_card {
+	background-color: #000000 !important;
+	border: 1px solid #FFFFFF;
+}
+
+.throwaway-card-mode .card {
+	background-color: #411a1a;
+}
+
+.throwaway-card-mode .card:hover {
+	background-color: #ff1818 !important;
+}
+
+.selected-white-card .card {
+	background-color: #691649 !important;
+}
+
+.selected-white-card .card:hover {
+	background-color: #b300a4 !important;
+}
+
+.player-hand-card .card:hover {
+	background-color: #40004d;
+}
