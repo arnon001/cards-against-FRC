@@ -1,0 +1,386 @@
+{
+	"order": 1,
+	"name": "FRC Pack English NSFW",
+	"filename": "EnglishSFW",
+	"black_cards": [
+		{
+			"text": "Heard they’re adding another Ranking Point to the game for _",
+			"pick": 1
+		},
+		{
+			"text": "“We gotta get the first seed team to pick us!” Don’t worry, tell them we have _",
+			"pick": 1
+		},
+		{
+			"text": "_? Sounds like a mechanical problem.",
+			"pick": 1
+		},
+		{
+			"text": "Are you stupid? We can’t pick that robot, they don’t have _",
+			"pick": 1
+		},
+		{
+			"text": "According to the scouting data, this team is really good at _",
+			"pick": 1
+		},
+		{
+			"text": "Safety is important at FIRST competitions. Be sure to avoid _",
+			"pick": 1
+		},
+		{
+			"text": "Build season is rough. I was up late last night _",
+			"pick": 1
+		},
+		{
+			"text": "The solution for every problem, _!",
+			"pick": 1
+		},
+		{
+			"text": "Quals 27 was the first time I ever saw _ during a match.",
+			"pick": 1
+		},
+		{
+			"text": "Of course, the first seeded team would pick the team with _",
+			"pick": 1
+		},
+		{
+			"text": "Of all the things I thought I’d see at a robotics competition, _ was not one of them.",
+			"pick": 1
+		},
+		{
+			"text": "I didn’t want to join robotics at first, not until they told me they had _",
+			"pick": 1
+		},
+		{
+			"text": "During off-season, our team likes to try _",
+			"pick": 1
+		},
+		{
+			"text": "The most important core value to our team is _",
+			"pick": 1
+		},
+		{
+			"text": "At competitions, you can find me _",
+			"pick": 1
+		},
+		{
+			"text": "Robotics? more like _",
+			"pick": 1
+		},
+		{
+			"text": "Our robot failed inspection because of _",
+			"pick": 1
+		},
+		{
+			"text": "I heard next year's game is going to be about _",
+			"pick": 1
+		},
+		{
+			"text": "My favorite team tradition, _",
+			"pick": 1
+		},
+		{
+			"text": "Here at robotics we promote STEM and _",
+			"pick": 1
+		},
+		{
+			"text": "If it hadn’t been for _, we would’ve won that last match!",
+			"pick": 1
+		},
+		{
+			"text": "This year to fundraise, we tried _",
+			"pick": 1
+		},
+		{
+			"text": "We present a new, groundbreaking match strategy, _",
+			"pick": 1
+		},
+		{
+			"text": "Build season, the time of _ and _",
+			"pick": 2
+		},
+		{
+			"text": "The essential part of any FIRST competition, _",
+			"pick": 1
+		},
+		{
+			"text": "FRC is very professional. Here, we enjoy _",
+			"pick": 1
+		},
+		{
+			"text": "My favorite part of our team’s culture is _",
+			"pick": 1
+		},
+		{
+			"text": "Ma’am, we’re not trying to indoctrinate your son, we’re just _",
+			"pick": 1
+		},
+		{
+			"text": "All this hype about water game, I’d prefer a game based on _",
+			"pick": 1
+		},
+		{
+			"text": "You know what really grinds my gears? _",
+			"pick": 1
+		},
+		{
+			"text": "After installing _, we completely dominated the field.",
+			"pick": 1
+		},
+		{
+			"text": "This year, they decided to replace _ with _",
+			"pick": 2
+		},
+		{
+			"text": "? We don’t talk about that. _",
+			"pick": 1
+		},
+		{
+			"text": "Join robotics, and discover the magic of _",
+			"pick": 1
+		},
+		{
+			"text": "Our subteam specializes in _",
+			"pick": 1
+		},
+		{
+			"text": "Our team graciously accepts your offer of _",
+			"pick": 1
+		},
+		{
+			"text": "This year, over half our funding was spent on _",
+			"pick": 1
+		},
+		{
+			"text": "Ah fuck, the freshman are _ again.",
+			"pick": 1
+		},
+		{
+			"text": "Our latest team email focused on _",
+			"pick": 1
+		},
+		{
+			"text": "Oh shit, marketing just sent a video of _ to our sponsors.",
+			"pick": 1
+		},
+		{
+			"text": "I just experienced love at first sight! They’re _",
+			"pick": 1
+		},
+		{
+			"text": "The best part about this year's competition was _",
+			"pick": 1
+		},
+		{
+			"text": "What was programming doing at their last meeting? _",
+			"pick": 1
+		},
+		{
+			"text": "In my opinion, they only won because they were _",
+			"pick": 1
+		},
+		{
+			"text": "Did you hear about team 3618? Their robot was _ on the field!",
+			"pick": 1
+		},
+		{
+			"text": "We’re on a time crunch! We’re gonna have to start _",
+			"pick": 1
+		},
+		{
+			"text": "And the winner of the Dean’s list award is _",
+			"pick": 1
+		},
+		{
+			"text": "The winner of the Woodie Flowers Award is _",
+			"pick": 1
+		},
+		{
+			"text": "What caused the robot to break? _",
+			"pick": 1
+		},
+		{
+			"text": "_ is why I stay in robotics!",
+			"pick": 1
+		},
+		{
+			"text": "Rules update 14: Teams may no longer be _ on the field",
+			"pick": 1
+		},
+		{
+			"text": "One of FIRST’s core values is _",
+			"pick": 1
+		},
+		{
+			"text": "In 1989, FIRST was created, but not many know that FIRST wasn’t the original name. The original name was _",
+			"pick": 1
+		},
+		{
+			"text": "What caused us to fail inspection for the 3rd time? _",
+			"pick": 1
+		},
+		{
+			"text": "Just blame _ on mechanical",
+			"pick": 1
+		},
+		{
+			"text": "What separates us from 254? _",
+			"pick": 1
+		}
+	],
+	"white_cards": [
+		"Huffing battery acid",
+		"254",
+		"Leftover competition food",
+		"Getting less than 2 hours of sleep",
+		"Damaging the field",
+		"Throwing field components at freshmen",
+		"Scouting sheets",
+		"Getting sponsored by NASA",
+		"Recycle Rush",
+		"Falling off the monkey bars",
+		"A tipped over robot",
+		"making out in the back of the stands",
+		"Safety captains that care too much about their job",
+		"A robot on fire",
+		"Scoring in the opponents goal",
+		"Being 3 weeks behind on build season",
+		"Fixing the robot while in queue for a match",
+		"A robot made of zip ties and duct tape",
+		"Duct tape",
+		"The robot disconnecting mid-match",
+		"Safety hazards",
+		"Safety goggles",
+		"Cotten Eyed Joe",
+		"Getting to worlds",
+		"A functioning vision system",
+		"The robot that does literally nothing",
+		"A good defense bot",
+		"Literally just a drivetrain",
+		"Tech fouls",
+		"Getting a red card",
+		"Reading the entire game manual in one sitting",
+		"Getting Run over by a tank drive",
+		"Gracious Professionalism",
+		"Blaming mechanical",
+		"Blaming controls",
+		"Getting absolutely wasted between matches",
+		"Worshipping Dean Kamen",
+		"Tearing up the practice field",
+		"Winning Chairman’s award",
+		"Chasing children with a robot",
+		"Losing a limb",
+		"Physically assaulting a referee",
+		"Falling mid climb",
+		"Betting on matches",
+		"A shitty practice bot",
+		"Kickoff",
+		"Water game",
+		"Stealing all the pins",
+		"Sawing the opponents robot in half",
+		"Getting laid in the supply closet",
+		"Cadding the robot in TinkerCAD",
+		"Watching BattleBots",
+		"Incompetent human players",
+		"Driving the robot into the wall",
+		"Giving the robot controls the day before competition",
+		"Electrocuting yourself",
+		"Batteries oozing acid",
+		"Performing surgery with the laser cutter",
+		"The George R. Brown Convention Center",
+		"Woodie Flowers",
+		"Replaying Infinite Recharge until the end of time",
+		"Swerve drives with bad drivers",
+		"Off-season competitions",
+		"Driving your robot through the pits",
+		"Shooting Power Cells in the ref’s face",
+		"Bribing teams to throw matches",
+		"Throwing matches for money",
+		"Programming the robot in Shakespearean",
+		"The drive team",
+		"Seeing how many power cells you can fit up your ass",
+		"Drinking WD-40",
+		"Doing a successful traversal climb",
+		"Doing shots with drive team",
+		"Deepthroating a pool noodle",
+		"Using FLL kids as free labor",
+		"Soup",
+		"A robotics competition",
+		"Skinny dipping in the hotel pool",
+		"Yelling Sweet Caroline at the top of your lungs",
+		"Using freshmen as game elements",
+		"Breaking the coding computer",
+		"Hot Pockets",
+		"Post-competition orgies",
+		"Flex Tape",
+		"Rainbow RGB lights",
+		"Blue banners",
+		"Driving away after stealing all the awards",
+		"Brainwashing freshmen",
+		"Spreading FIRST propoganda",
+		"Sacrificing freshmen for robot success",
+		"Performing satanic rituals in the name of FIRST",
+		"Throwing batteries at event security",
+		"Constructing bombs in the pit area",
+		"The aggressive defense bot",
+		"Hot-wiring other robots",
+		"Robots building kids",
+		"5-second traversal",
+		"Rapid React",
+		"Selling crack to other teams",
+		"Overconfident drive teams",
+		"CAD teams that snort wood glue",
+		"Bees.",
+		"An overexcited team mascot",
+		"Turning on the robot in the pits",
+		"Slutty Brownies",
+		"Pedophilic Robots",
+		"Coating the electronics in resin",
+		"Doing a tik tok because the social media manager asked you",
+		"Rabid Water Buffalos",
+		"Rubbing the computer to turn its SOFTware into HARDware",
+		"Putting canned beans in other teams’ robots",
+		"Charged Up",
+		"Dr. Harris jump-scares",
+		"Vaporeon",
+		"Grabbing one end of an exposed wire, then grabbing the other end and become a human circuit",
+		"Tall boy syndrome",
+		"Dean Kamen‘a tendency towards the domestic abuse of tables",
+		"Another climb game!",
+		"Running around states carrying a jar of pickles while dressed as a banana",
+		"Not wearing safety glasses",
+		"Being 3 weeks behind on build season",
+		"Making all of the freshmen scouts",
+		"Go fast smoke",
+		"Getting Swole",
+		"Bringing pets to the shop",
+		"Popping the cubes (it was bound to happen eventually)",
+		"A jumping robot",
+		"FLL Jr Kids",
+		"Electric Powder",
+		"An hour long chairman’s presentation",
+		"A drunk Dean Kamen",
+		"Getting told to “just use another zip tie",
+		"Children of the Swamp",
+		"Bots that use LED to distract from the fact that they are a push-bot",
+		"Mentor teams",
+		"Buttery smooth swerve drive",
+		"Swiss Cheesing a robot",
+		"Dean Kamen’s 14-hour speeches",
+		"Making the game element a cube to distract from the fact that it’s another ball game",
+		"Adding a fleshlight to the robot",
+		"Snorting coke with your alliance partners",
+		"Mentor led teams",
+		"Blinding the other teams with your limelight",
+		"Doing Cotten Eyed Joe until you die of cardiac arrest",
+		"“Will you sign my ears?”",
+		"“Oh no step robot put you telescoping type with end effector away”",
+		"Pooping in the programming laptop and closing it",
+		"Teaching a robot to love",
+		"Hot-glueing the RoboRio",
+		"Using an impact driver on the PDP",
+		"An Arduino",
+		"Season situationships",
+		"Huh"
+	]
+}
