@@ -705,7 +705,8 @@ export class Game implements ITickable {
 
 		this.timeLeft = -1;
 
-		console.log("[Game] Winner selected. Starting next round in 4 seconds");
+		// removed this since this is spaming the console
+		// console.log("[Game] Winner selected. Starting next round in 4 seconds");
 
 		setTimeout(() => {
 			if (this.getPhase() == GamePhase.VOTING && this.getGameState() == GameState.INGAME) {
